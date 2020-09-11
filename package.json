@@ -1,0 +1,32 @@
+{
+  "name": "grocery-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiamWright/Grocery-API-Test.git"
+  },
+  "author": "Liam Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LiamWright/Grocery-API-Test/issues"
+  },
+  "homepage": "https://github.com/LiamWright/Grocery-API-Test#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mocha": "^8.1.3",
+    "typescript-eslint": "0.0.1-alpha.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.8.1",
+    "ts-node": "^9.0.0",
+    "tsc": "^1.20150623.0",
+    "typescript": "^4.0.2"
+  }
+}
