@@ -7,8 +7,13 @@ export default [
     method: "get",
     handler: [
         async (req: any, res: Response) => {
-        const result = await getAllProduceItems();
-        res.status(200).send(result);
+          try {
+            const result = await getAllProduceItems();
+            res.status(200).send(result);
+          } catch (e) {
+            res.status(500).send(e.message);
+          }
+
         }
 
     ]
