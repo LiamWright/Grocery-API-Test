@@ -2,10 +2,29 @@
   "name": "grocery-api-test",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist/Server.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "start": "tsc-watch --onSuccess && node dist/server.js"
+    "test": "jest ",
+    "start": "tsc-watch --onSuccess && node dist/src/server.js"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ]
   },
   "repository": {
     "type": "git",
@@ -25,7 +44,6 @@
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^5.0.0-alpha.7",
-    "mocha": "^8.1.3",
     "tsc-watch": "^4.2.9",
     "typescript-eslint": "0.0.1-alpha.0"
   },
@@ -35,6 +53,9 @@
     "@typescript-eslint/eslint-plugin": "^4.1.0",
     "@typescript-eslint/parser": "^4.1.0",
     "eslint": "^7.8.1",
+    "jest": "^26.4.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.3.0",
     "ts-node": "^9.0.0",
     "tsc": "^1.20150623.0",
     "typescript": "^4.0.2"
