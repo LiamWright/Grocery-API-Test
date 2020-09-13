@@ -13,6 +13,6 @@ const ProductSchema = new Schema ({
     name: {type: String},
     price: {type: Number},
     stock: {type: Number},
-    updated: {type: String}
+    updated: {type: Date}
 })
 export const ProductModel = mongoose.model('Products', ProductSchema);

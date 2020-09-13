@@ -1,6 +1,4 @@
-import * as mongoose from 'mongoose';
-import { json } from "body-parser"
-import {ProductModel, IProduct} from '../../models/Product'
+import {ProductModel} from '../../models/Product'
 
 export const getAllProduceItems = async(req, res) =>
 {
@@ -11,7 +9,7 @@ export const getAllProduceItems = async(req, res) =>
                 res.send(err);
             }
             res.json(result);
-        });
+        }).sort({updated: -1});
     }
     catch (ex) {
         return ex;
