@@ -15,3 +15,24 @@ export const getAllProduceItems = async(req, res) =>
         return ex;
     }
 }
+export const getProductByName = async(req, res) =>
+{
+    if(req?.params?.productName) {
+        const productName = req.params.productName;
+
+        try {
+            await ProductModel.find({name: productName},(err, result) =>
+            {
+                if(err) {
+                    res.send(err);
+                }
+                res.json(result);
+            });
+        }
+        catch (ex) {
+            return ex;
+        }
+    }
+
+
+}

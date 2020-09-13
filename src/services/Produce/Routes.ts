@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getAllProduceItems } from "./ProduceController";
+import { getAllProduceItems, getProductByName } from "./ProduceController";
 
 const address = "/api/v1"
 export default [
@@ -8,28 +8,32 @@ export default [
     path: address + "/produce",
     method: "get",
     handler: [
-        async (req: any, res: Response) => {
+        async (req: Request, res: Response) => {
             const result = await getAllProduceItems(req, res);
             res.status(200).send(result);
         }
 
     ]
 
-  }/* ,
+  },
   {
     //GetByName
     path: address + "/produce/:productName",
     method: "get",
     handler: [
         async (req: any, res: Response) => {
-            //const result = await getAllProduceItems();
-            res.status(200).send(result);
+          
+        const result = await getProductByName(req,res);
+        res.status(200).send(result);
+      
+        res.status(400).send("Invalid or empty search term");
+  
 
         }
 
     ]
   },
-  {
+  /* {
     //Bulk Upload
     path: address + "/produce",
     method: "post",
@@ -45,7 +49,7 @@ export default [
   {
     //Update Price
     path: address + "/produce/:productName",
-    method: "post",
+    method: "put",
     handler: [
         async (req: any, res: Response) => {
             //const result = await getAllProduceItems();
