@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getAllProduceItems, getProductByName } from "./ProduceController";
+import { getAllProduceItems, getProductByName, updatePriceForProduct } from "./ProduceController";
 
 const address = "/api/v1"
 export default [
@@ -33,8 +33,8 @@ export default [
 
     ]
   },
-  /* {
-    //Bulk Upload
+ /* {
+     //Bulk Upload
     path: address + "/produce",
     method: "post",
     handler: [
@@ -45,18 +45,22 @@ export default [
         }
 
     ]
-  },
+  }, */
   {
     //Update Price
     path: address + "/produce/:productName",
     method: "put",
     handler: [
         async (req: any, res: Response) => {
-            //const result = await getAllProduceItems();
+          if(req.body)
+          {
+            const result = await updatePriceForProduct(req, res);
             res.status(200).send(result);
+          }
+
 
         }
 
     ]
-  } */
+  }
 ];

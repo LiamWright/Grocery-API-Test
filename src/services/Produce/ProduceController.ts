@@ -33,6 +33,23 @@ export const getProductByName = async(req, res) =>
             return ex;
         }
     }
+}
+export const updatePriceForProduct = async(req, res) =>
+{
+    if(req?.params?.productName) {
+        const productName = req.params.productName;
 
-
+        try {
+            await ProductModel.findOneAndUpdate({name: productName}, req.body, {new: true},(err, result) =>
+            {
+                if(err) {
+                    res.send(err);
+                }
+                res.json(result);
+            });
+        }
+        catch (ex) {
+            return ex;
+        }
+    }
 }
