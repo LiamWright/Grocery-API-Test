@@ -37,8 +37,8 @@ export default [
     handler: [
         async (req: any, res: Response) => {
           if(req.body) {
-            const result = await uploadNewProduceList(req, res);
-            res.status(200).send(result);
+            await uploadNewProduceList(req, res);
+            res.status(200);
           }
         }
     ]

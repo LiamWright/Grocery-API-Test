@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "a4e227df-74ea-4193-8935-d7d75ecaa8a7",
+		"name": "Groceries-API-Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/produce/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"produce",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"name\" : \"banana\",\r\n    \"price\" : 0.29,\r\n    \"stock\" : 20,\r\n    \"updated\" : \"2014-01-02\"\r\n}, {\r\n    \"name\" : \"melon\",\r\n    \"price\" : 1.01,\r\n    \"stock\" : 3,\r\n    \"updated\" : \"2014-03-28\"\r\n}, {\r\n    \"name\" : \"apple\",\r\n    \"price\" : 1.54,\r\n    \"stock\" : 22,\r\n    \"updated\" : \"2014-02-05\"\r\n}, {\r\n    \"name\" : \"pear\",\r\n    \"price\" : 0.41,\r\n    \"stock\" : 12,\r\n    \"updated\" : \"2014-04-19\"\r\n}, {\r\n    \"name\" : \"kumquat\",\r\n    \"price\" : 0.64,\r\n    \"stock\" : 32,\r\n    \"updated\" : \"2014-06-10\"\r\n}, {\r\n    \"name\" : \"orange\",\r\n    \"price\" : 2.04,\r\n    \"stock\" : 19,\r\n    \"updated\" : \"2014-05-25\"\r\n}, {\r\n    \"name\" : \"lemon\",\r\n    \"price\" : 1.56,\r\n    \"stock\" : 9,\r\n    \"updated\" : \"2014-12-30\"\r\n}]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/produce/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"produce",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/produce/nameGoesHere",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"produce",
+						"nameGoesHere"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update one item",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n    \"name\" : \"banana\",\r\n    \"price\" : 0.29,\r\n    \"stock\" : 20,\r\n    \"updated\" : \"2014-01-02\"\r\n}]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/produce/nameGoesHere",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"produce",
+						"nameGoesHere"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

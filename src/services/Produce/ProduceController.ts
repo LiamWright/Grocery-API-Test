@@ -64,15 +64,15 @@ export const uploadNewProduceList = async(req, res) => {
                     res.send(err);
                 }
 
-            });
-            //Validation TODO
-            await ProductModel.insertMany(productArray,(err, result) => {
-                if(err) {
-                    res.send(err);
-                }
-                res.json(result);
-                return;
-            
+                ProductModel.insertMany(productArray,(err, result) => {
+                    if(err) {
+                        res.send(err);
+                    }
+                    res.json(result);
+                    return;
+                
+                });
+
             });
         }
         catch (ex) {
